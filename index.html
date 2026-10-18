@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,13 +12,13 @@
         }
 
         #hit:active {
-            background-color: #642F91;
-            color: white;
+            background-color: #9844E0;
+            color: #C785FF;
         }
         #hit {
             transition: background-color 0.2s ease;
-            background-color: #9844E0;
-            color: #C785FF;
+            background-color: #642F91;
+            color: white;
 
             position: absolute;
             top: 50%;
@@ -52,13 +51,16 @@
     </footer>
 
     <script>
+        
         const button = document.getElementById("hit");
-
-        button.addEventListener("click", () => {
-            await wait(1753); 
+        
+        button.addEventListener("click", async () => {
+            await new Promise(resolve => setTimeout(resolve, 1753));
+        
             let randomInt = Math.floor(Math.random() * 13) + 1;
             button.textContent = randomInt;
         });
+
     </script>
 </body>
 </html>
