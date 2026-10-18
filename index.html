@@ -55,10 +55,13 @@
         const button = document.getElementById("hit");
         
         button.addEventListener("click", async () => {
-            await new Promise(resolve => setTimeout(resolve, 1753));
         
             let randomInt = Math.floor(Math.random() * 13) + 1;
             button.textContent = randomInt;
+
+            await new Promise(resolve => setTimeout(resolve, 1753));
+
+            button.textContent = "Hit";
         });
 
     </script>
