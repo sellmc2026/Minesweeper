@@ -11,11 +11,33 @@
             background-color: #1F0039;
             color: white;
         }
-        
+
+        #hit:active {
+            background-color: #642F91;
+            color: white;
+        }
+        #hit {
+            transition: background-color 0.2s ease;
+            background-color: #9844E0;
+            color: #C785FF;
+
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            width: 200px;
+            height: 80px;
+            border-radius: 15px;
+
+            font-size: 24px;
+            cursor: pointer;
+        }
       
     </style>
 </head>
 <body>
+    <button id="hit">Hit</button>
     
     <header>
         <!-- Header content -->
@@ -30,7 +52,13 @@
     </footer>
 
     <script>
-        // JavaScript goes here
+        const button = document.getElementById("hit");
+
+        button.addEventListener("click", () => {
+            await wait(1753); 
+            let randomInt = Math.floor(Math.random() * 13) + 1;
+            button.textContent = randomInt;
+        });
     </script>
 </body>
 </html>
