@@ -33,11 +33,9 @@
         }
         
         #hit:active {
-            background-color: #04B318;
-            color: #BEFDC5;
 
-            width: 150px;
-            height: 40px;
+            width: 175px;
+            height: 60px;
         }
         
         @keyframes pulse {
@@ -55,7 +53,7 @@
     </style>
 </head>
 <body>
-    <button id="hit">Start Game</button>
+    <button id="hit", onclick="goToPage()">Start Game</button>
     <header>
         <!-- Header content -->
     </header>
@@ -70,21 +68,9 @@
 
     <script>
 
-        
-        const hitBTN = document.getElementById("hit");
-        
-        hitBTN.addEventListener("click", async () => {
-        
-            let randomInt = Math.floor(Math.random() * 13) + 1;
-            hitBTN.textContent = randomInt;
-
-            hitBTN.disabled = true;
-
-            await new Promise(resolve => setTimeout(resolve, 1753));
-            
-            hitBTN.disabled = false;
-            hitBTN.textContent = "Hit";
-        });
+        function goToPage() {
+            window.location.href = "game.html";
+        }
 
     </script>
 </body>
