@@ -86,6 +86,38 @@
 
             minefield.appendChild(slot);
         }
+
+        const slotBtns = document.querySelectorAll('.my-btn');
+        const minesAmount = 3;
+        const mines = Array.from(slotBtns);
+
+        for (let i = 0; i < numberOfElementsToAdd; i++) {
+          
+          if (mines.length === 0) break;
+        
+          // Pick a random index from the remaining pool
+          const randomIndex = Math.floor(Math.random() * mines.length);
+          
+          // Select the element and remove it from the array pool (prevents picking duplicates)
+          const [randomMine] = mines.splice(randomIndex, 1);
+          
+          // Add the target class to that random element
+          randomMine.classList.add('target-class');
+        }
+
+
+        randomMine.addEventListener('click', () => {
+            const buttonImg = event.currentTarget.querySelector('img');
+    
+            if (buttonImg) {
+                buttonImg.src = 'diamond.png';
+            }
+            
+            
+        });
+
+        
+        
     </script>
 </body>
 </html>
