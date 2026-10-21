@@ -39,10 +39,10 @@
             background-color: #9F69CD;
             color: #02580C;
 
-            width: 80px;
-            height: 80px;
+            width: 100px;
+            height: 100px;
             border-radius: 20px;
-            border: #BFBFBF;
+            border: 4px dashed #BFBFBF;
 
             font-size: 24px;
             cursor: pointer;
@@ -62,7 +62,7 @@
     <script>
         const minefield = document.getElementById("minefield");
 
-        for (let i = 0; i < 64; i++) {
+        for (let i = 0; i < 32; i++) {
             const slot = document.createElement("button");
 
             slot.className = "slot";
