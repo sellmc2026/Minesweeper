@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,72 +10,66 @@
         body {
             background-color: #1F0039;
             color: white;
+            margin: 0;
         }
 
-      minefield {
+        .minefield {
             background-color: #550598;
-            color: white;
-
-            position: absolute;
 
             width: 800px;
             height: 800px;
 
-            top: 50%
-            left: 50%
-        
-        }
-
-        
-        .slot {
-            background-color: #5CFF6D;
-            color: #02580C;
-        
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-        
+
+            display: grid;
+            grid-template-columns: repeat(8, 80px);
+            grid-template-rows: repeat(8, 80px);
+
+            justify-content: center;
+            align-content: center;
+            gap: 10px;
+
+            border-radius: 20px;
+        }
+
+        .slot {
+            background-color: #9F69CD;
+            color: #02580C;
+
             width: 80px;
             height: 80px;
-            border-radius: 15px;
-        
+            border-radius: 20px;
+            border: #BFBFBF;
+
             font-size: 24px;
             cursor: pointer;
-        
-            
+
+            transition: transform 0.15s ease;
         }
-        
+
         .slot:active {
-
-            width: 70px;
-            height: 70px;
+            transform: scale(0.875);
         }
-        
-
-
-
-      
     </style>
 </head>
+
 <body>
-    <button id="hit">Start Game</button>
-    <header>
-        <!-- Header content -->
-    </header>
-
-    <main>
-        <!-- Main content -->
-    </main>
-
-    <footer>
-        <!-- Footer content -->
-    </footer>
+    <div class="minefield" id="minefield"></div>
 
     <script>
+        const minefield = document.getElementById("minefield");
 
-        
+        for (let i = 0; i < 64; i++) {
+            const slot = document.createElement("button");
 
+            slot.className = "slot";
+            slot.textContent = "";
+
+            minefield.appendChild(slot);
+        }
     </script>
 </body>
 </html>
