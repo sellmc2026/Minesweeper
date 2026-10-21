@@ -11,33 +11,48 @@
             color: white;
         }
 
-        #hit:active {
-            background-color: #9844E0;
-            color: #C785FF;
-        }
+        
         #hit {
-            transition: background-color 0.2s ease;
             background-color: #642F91;
             color: white;
-
+        
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-
+        
             width: 200px;
             height: 80px;
             border-radius: 15px;
-
+        
             font-size: 24px;
             cursor: pointer;
+        
+            animation: pulse 1.5s ease-in-out infinite;
+            transition: background-color 0.2s ease, color 0.2s ease;
         }
+        
+        #hit:active {
+            background-color: #9844E0;
+            color: #C785FF;
+        }
+        
+        @keyframes pulse {
+            0%, 100% {
+                transform: translate(-50%, -50%) scale(1);
+            }
+        
+            50% {
+                transform: translate(-50%, -50%) scale(1.15);
+            }
+        }
+
+
       
     </style>
 </head>
 <body>
-    <button id="hit">Hit</button>
-    
+    <button id="hit">Start Game</button>
     <header>
         <!-- Header content -->
     </header>
@@ -51,6 +66,7 @@
     </footer>
 
     <script>
+
         
         const hitBTN = document.getElementById("hit");
         
