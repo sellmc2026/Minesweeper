@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Website</title>
+    <title>Mines</title>
 
     <style>
         body {
@@ -13,8 +13,8 @@
 
         
         #hit {
-            background-color: #642F91;
-            color: white;
+            background-color: #5CFF6D;
+            color: #BEFDC5;
         
             position: absolute;
             top: 50%;
@@ -33,17 +33,18 @@
         }
         
         #hit:active {
-            background-color: #9844E0;
-            color: #C785FF;
+            background-color: #04B318;
+            color: #BEFDC5;
+            transform: translate(-50%, -50%)
         }
         
         @keyframes pulse {
             0%, 100% {
-                transform: translate(-50%, -50%) scale(1);
+                transform: translate(-35%, -35%) scale(1);
             }
         
             50% {
-                transform: translate(-50%, -50%) scale(1.15);
+                transform: translate(-35%, -35%) scale(1.15);
             }
         }
 
